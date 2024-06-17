@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserve Seat - Cinema World</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="navBar :: navBar"></div>
+<div class="container d-flex justify-content-center">
+    <div>
+        <h2 th:text="${session.movieTitle}">Movie Title</h2>
+        <p th:text="${session.screeningTime}">Screening Time</p>
+        <h4>Selected Seats:</h4>
+        <ul>
+            <li th:each="seat : ${session.selectedSeats}" th:text="${seat + 1}"></li>
+        </ul>
+        <form class="center-align" th:action="@{/confirmReservation}" method="post">
+            <button type="submit" class="button">Confirm</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

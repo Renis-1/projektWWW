@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Screenings</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="navBar :: navBar"></div>
+<div class="container">
+  <h2>Screenings for <span th:text="${selectedDate}">[Selected Date]</span></h2>
+  <form method="get" action="/screenings">
+    <div class="form-group">
+      <label for="date">Choose a date:</label>
+      <input type="date" id="date" name="date" class="form-control" th:value="${selectedDate}">
+    </div>
+    <button type="submit" class="button">Show Screenings</button>
+  </form>
+  <div th:if="${screenings.empty}" class="alert">
+    <p>Sorry, the cinema is closed on this day</p>
+  </div>
+  <div th:if="${!screenings.empty}">
+    <table class="table">
+      <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Screening Time</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="screening : ${screenings}">
+        <td th:text="${screening.movie.title}">Movie Title</td>
+        <td th:text="${screening.screeningTime}">Screening Time</td>
+        <td>
+          <a th:href="@{/reserve/{id}(id=${screening.id})}" class="button">Reserve</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>

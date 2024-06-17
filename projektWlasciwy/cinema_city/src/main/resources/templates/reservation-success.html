@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="3;url=/">
+    <title>Reservation Success</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h2>Your Reservation Was Successful</h2>
+    <p>Redirecting you to the homepage...</p>
+</div>
+
+<script>
+    setTimeout(function() {
+        window.location.href = "/";
+    }, 3000); // 3000 milliseconds = 3 seconds
+</script>
+
+</body>
+</html>

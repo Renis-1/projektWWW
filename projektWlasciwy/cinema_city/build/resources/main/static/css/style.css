@@ -1,0 +1,233 @@
+body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #e50914;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #141414;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #e50914;
+        }
+
+        .hero {
+            background-image: url('https://cinematroisi.it/wp-content/uploads/2021/09/%C2%A9Flavia-Rossi_Cinema-Troisi_001-Copia-1024x814.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #000;
+        }
+
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .container {
+            padding: 30px;
+
+        }
+
+        .carousel {
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+        }
+
+        .movie-list {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .movie {
+            background-color: #333;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .movie img {
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        .movie h3 {
+            margin: 10px 0 5px 0;
+        }
+
+        .movie p {
+            margin: 0;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .carousel-nav button {
+            background-color: #e50914;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .carousel-nav button:hover {
+            background-color: #ff4f5a;
+        }
+
+         .button {
+                    background-color: #e50914;
+                    color: #ffffff;
+                    border: none;
+                    padding: 10px 20px;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    font-size: 1em;
+                }
+
+          .button:hover {
+                    background-color: #ff4f5a;
+                }
+
+        @media (max-width: 600px) {
+            .hero h2 {
+                font-size: 2em;
+            }
+
+            .movie {
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+        .carousel-inner .carousel-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .carousel-item {
+            flex: 0 0 20%;
+        }
+
+        form {
+                    text-align: center;
+                    margin-bottom: 20px;
+                }
+
+                .form-group {
+                    margin-bottom: 20px;
+                }
+
+                label {
+                    color: #ffffff;
+                }
+
+                .table {
+                    background-color: #333;
+                    color: #ffffff;
+                }
+
+                .table th, .table td {
+                    border-color: #454d55;
+                }
+
+                .table th {
+                    background-color: #1c1c1c;
+                    color: #ffffff;
+                }
+
+                .table tbody tr:hover {
+                    background-color: #454d55;
+                }
+
+                .alert {
+                    background-color: #e50914;
+                    color: #ffffff;
+                    padding: 10px;
+                    margin-top: 20px;
+                    border-radius: 5px;
+                }
+                .seat-row {
+                      display: flex;
+                      flex-wrap: wrap;
+                      justify-content: center;
+                    }
+                    .seat-label {
+                      width: 12.5%; /* 100% / 8 columns */
+                      text-align: center;
+                      margin-bottom: 10px;
+                    }
+                    .available {
+                      background-color: green;
+                    }
+                    .reserved {
+                          background-color: red;
+                        }
+
+                            form div {
+                              margin-bottom: 10px;
+                            }
+
+                            form label {
+                              color: #ffffff;
+                              display: block;
+                              margin-bottom: 5px;
+                            }
+                            form button {
+                                  background-color: #e50914;
+                                  color: #ffffff;
+                                  cursor: pointer;
+                                }
+
+                                form button:hover {
+                                  background-color: #ff4f5a;
+                                }
+
+                                @media (max-width: 600px) {
+                                  form {
+                                    width: 90%;
+                                  }
+                                }
+                                .form-wrapper {
+                                      display: flex;
+                                      justify-content: center;
+                                      align-items: center;
+                                      height: 100vh;
+                                    }
+                                    .center-align {
+                                                text-align: center;
+                                            }

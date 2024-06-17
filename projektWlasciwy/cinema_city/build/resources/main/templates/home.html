@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema City</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div th:replace="navBar :: navBar"></div>
+<div class="hero">
+    <h2>Welcome to Cinema City</h2>
+</div>
+<div class="container">
+    <h2>Now Showing</h2>
+    <div class="carousel">
+        <div class="movie-list" id="movieList">
+
+            <div th:each="movie : ${movies}" class="movie">
+                <img th:src="${movie.posterURL}" alt="Movie Poster">
+                <h3 th:text="${movie.title}">Movie Title</h3>
+            </div>
+
+        </div>
+        <div class="carousel-nav">
+            <button id="prevBtn" onclick="moveCarousel(-1)">Prev</button>
+            <button id="nextBtn" onclick="moveCarousel(1)">Next</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const movieList = document.getElementById('movieList');
+    const movies = document.querySelectorAll('.movie');
+    const movieWidth = movies[0].offsetWidth + 20; // Width of each movie including margin
+    const visibleMovies = 5; // Number of movies visible on screen
+
+    let currentOffset = -2; // Start with some movies partially outside the screen
+
+    function moveCarousel(direction) {
+        currentOffset += direction;
+        if (currentOffset < -2) {
+            currentOffset = movies.length - visibleMovies;
+        }
+        if (currentOffset > movies.length - visibleMovies) {
+            currentOffset = -2;
+        }
+        movieList.style.transform = `translateX(${-currentOffset * movieWidth}px)`;
+    }
+</script>
+
+</body>
+</html>
